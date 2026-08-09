@@ -8,9 +8,11 @@ import type { ResumeData, BrandData } from "./types";
 const resume = resumeData as ResumeData;
 const brand = brandData as BrandData;
 
+const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 export function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<Site resume={resume} logoText={brand.logoText} />} />
         <Route path="/print" element={<Print resume={resume} logoText={brand.logoText} />} />

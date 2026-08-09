@@ -11,13 +11,16 @@ const SITE_DIR = path.join(REPO_ROOT, "packages", "site");
 const PREVIEW_PORT = 4173;
 const PREVIEW_URL = `http://localhost:${PREVIEW_PORT}`;
 
-function siteIsBuilt(): boolean {
-  return fs.existsSync(path.join(SITE_DIR, "dist", "index.html"));
-}
-
-function buildSite(): void {
-  console.log("Building /packages/site before rendering PDF...");
-  execSync("npm run build -w @my-cv/site", { cwd: REPO_ROOT, stdio: "inherit" });
+function buildSiteForLocalPreview(): void {
+  // The deployed site is built with base "/my-cv/" for GitHub Pages, but the
+  // local preview server serves from the root, so rebuild with base "/"
+  // rather than risk reusing a dist built for the Pages subpath.
+  console.log("Building /packages/site (base \"/\") before rendering PDF...");
+  execSync("npm run build -w @my-cv/site", {
+    cwd: REPO_ROOT,
+    stdio: "inherit",
+    env: { ...process.env, SITE_BASE: "/" },
+  });
 }
 
 async function waitForServer(url: string, timeoutMs = 30000): Promise<void> {
@@ -58,9 +61,7 @@ async function main() {
   if (siteUrlEnv) {
     printUrl = `${siteUrlEnv.replace(/\/$/, "")}/print`;
   } else {
-    if (!siteIsBuilt()) {
-      buildSite();
-    }
+    buildSiteForLocalPreview();
     previewProcess = startPreviewServer();
     await waitForServer(PREVIEW_URL);
     printUrl = `${PREVIEW_URL}/print`;
