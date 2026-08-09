@@ -2,11 +2,16 @@ import fs from "fs";
 import path from "path";
 import { loadResume, loadBrand, OUTPUT_DIR } from "@my-cv/shared";
 
+function formatDate(date: string): string {
+  const [y, m, d] = date.split("-");
+  if (d) return `${d}.${m}.${y}`;
+  if (m) return `${m}.${y}`;
+  return y;
+}
+
 function formatDateRange(start?: string, end?: string): string {
-  const startLabel = start || "";
-  const endLabel = end || "Present";
-  if (!startLabel) return "";
-  return `${startLabel} – ${endLabel}`;
+  if (!start) return "";
+  return `${formatDate(start)} – ${end ? formatDate(end) : "Present"}`;
 }
 
 function renderMarkdown(): string {
@@ -67,7 +72,7 @@ function renderMarkdown(): string {
   if (awards.length > 0) {
     lines.push(`\n## Awards`);
     for (const award of awards) {
-      lines.push(`\n- **${award.title}** — ${award.awarder ?? ""} (${award.date ?? ""})`);
+      lines.push(`\n- **${award.title}** — ${award.awarder ?? ""} (${award.date ? formatDate(award.date) : ""})`);
     }
   }
 

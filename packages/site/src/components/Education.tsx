@@ -4,9 +4,16 @@ export interface EducationProps {
   education?: EducationItem[];
 }
 
+function formatDate(date: string): string {
+  const [y, m, d] = date.split("-");
+  if (d) return `${d}.${m}.${y}`;
+  if (m) return `${m}.${y}`;
+  return y;
+}
+
 function formatDateRange(start?: string, end?: string): string {
   if (!start) return "";
-  return `${start} – ${end || "Present"}`;
+  return `${formatDate(start)} – ${end ? formatDate(end) : "Present"}`;
 }
 
 export function Education({ education }: EducationProps) {

@@ -12,9 +12,16 @@ import {
 import { loadResume, loadBrand, OUTPUT_DIR } from "@my-cv/shared";
 import { toDocxStyles } from "@my-cv/brand-kit";
 
+function formatDate(date: string): string {
+  const [y, m, d] = date.split("-");
+  if (d) return `${d}.${m}.${y}`;
+  if (m) return `${m}.${y}`;
+  return y;
+}
+
 function formatDateRange(start?: string, end?: string): string {
   if (!start) return "";
-  return `${start} – ${end || "Present"}`;
+  return `${formatDate(start)} – ${end ? formatDate(end) : "Present"}`;
 }
 
 function main() {
@@ -133,7 +140,7 @@ function main() {
   if (awards.length > 0) {
     children.push(heading("Awards"));
     for (const award of awards) {
-      children.push(bullet(`${award.title} — ${award.awarder ?? ""} (${award.date ?? ""})`));
+      children.push(bullet(`${award.title} — ${award.awarder ?? ""} (${award.date ? formatDate(award.date) : ""})`));
     }
   }
 

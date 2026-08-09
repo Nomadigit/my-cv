@@ -2,9 +2,16 @@ import fs from "fs";
 import path from "path";
 import { loadResume, loadBrand, OUTPUT_DIR } from "@my-cv/shared";
 
+function formatDate(date: string): string {
+  const [y, m, d] = date.split("-");
+  if (d) return `${d}.${m}.${y}`;
+  if (m) return `${m}.${y}`;
+  return y;
+}
+
 function formatDateRange(start?: string, end?: string): string {
   if (!start) return "";
-  return `${start} - ${end || "Present"}`;
+  return `${formatDate(start)} - ${end ? formatDate(end) : "Present"}`;
 }
 
 function section(title: string): string {
@@ -76,7 +83,7 @@ function renderTxt(): string {
     const lines = [section("AWARDS")];
     for (const award of awards) {
       lines.push("");
-      lines.push(`${award.title} — ${award.awarder ?? ""} (${award.date ?? ""})`);
+      lines.push(`${award.title} — ${award.awarder ?? ""} (${award.date ? formatDate(award.date) : ""})`);
     }
     blocks.push(lines.join("\n"));
   }
