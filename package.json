@@ -7,7 +7,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build:shared": "npm run build -w @my-cv/shared",
+    "build:brand-kit": "npm run build -w @my-cv/brand-kit",
+    "build:shared": "npm run build:brand-kit && npm run build -w @my-cv/shared",
     "validate:data": "npm run build:shared && npm run validate-data -w @my-cv/shared",
     "build:site": "npm run build -w @my-cv/site",
     "build:pdf": "npm run build -w @my-cv/pdf-renderer && npm run render -w @my-cv/pdf-renderer",

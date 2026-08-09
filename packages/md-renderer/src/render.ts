@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { loadResume, OUTPUT_DIR } from "@my-cv/shared";
+import { loadResume, loadBrand, OUTPUT_DIR } from "@my-cv/shared";
 
 function formatDateRange(start?: string, end?: string): string {
   const startLabel = start || "";
@@ -82,6 +82,9 @@ function renderMarkdown(): string {
 }
 
 function main() {
+  // Validate brand.json up front too, even though this renderer doesn't
+  // consume it, so a schema violation is caught wherever build:all runs.
+  loadBrand();
   const markdown = renderMarkdown();
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   const outPath = path.join(OUTPUT_DIR, "resume.md");

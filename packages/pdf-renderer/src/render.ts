@@ -45,6 +45,10 @@ function startPreviewServer(): ChildProcess {
   return spawn(viteBin, ["preview", "--port", String(PREVIEW_PORT), "--strictPort"], {
     cwd: SITE_DIR,
     stdio: "ignore",
+    // Must match the base the dist was built with in buildSiteForLocalPreview(),
+    // otherwise vite preview serves under its default "/my-cv/" base and
+    // rejects the plain "/print" request below with a "did you mean..." page.
+    env: { ...process.env, BASE_PATH: "/" },
   });
 }
 
@@ -52,7 +56,8 @@ async function main() {
   // Validate data up front so a schema violation fails loudly before we
   // spend time building the site / launching a browser.
   loadResume();
-  loadBrand();
+  const brand = loadBrand();
+  const documentLayout = brand.layout.document;
 
   const siteUrlEnv = process.env.SITE_URL;
   let previewProcess: ChildProcess | undefined;
@@ -77,9 +82,14 @@ async function main() {
 
     await page.pdf({
       path: outPath,
-      format: "A4",
+      format: documentLayout?.pageSize ?? "A4",
       printBackground: true,
-      margin: { top: "15mm", right: "12mm", bottom: "15mm", left: "12mm" },
+      margin: {
+        top: documentLayout?.margins?.top ?? "15mm",
+        right: documentLayout?.margins?.right ?? "12mm",
+        bottom: documentLayout?.margins?.bottom ?? "15mm",
+        left: documentLayout?.margins?.left ?? "12mm",
+      },
     });
 
     await browser.close();

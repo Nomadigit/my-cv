@@ -14,8 +14,8 @@ export function App() {
   return (
     <BrowserRouter basename={basename}>
       <Routes>
-        <Route path="/" element={<Site resume={resume} logoText={brand.logoText} />} />
-        <Route path="/print" element={<Print resume={resume} logoText={brand.logoText} />} />
+        <Route path="/" element={<Site resume={resume} logoText={brand.logo?.text} />} />
+        <Route path="/print" element={<Print resume={resume} logoText={brand.logo?.text} />} />
       </Routes>
     </BrowserRouter>
   );

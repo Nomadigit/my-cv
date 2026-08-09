@@ -10,10 +10,7 @@ import {
   BorderStyle,
 } from "docx";
 import { loadResume, loadBrand, OUTPUT_DIR } from "@my-cv/shared";
-
-function hexNoHash(hex: string): string {
-  return hex.replace("#", "");
-}
+import { toDocxStyles } from "@my-cv/brand-kit";
 
 function formatDateRange(start?: string, end?: string): string {
   if (!start) return "";
@@ -25,36 +22,41 @@ function main() {
   const brand = loadBrand();
   const { basics, work = [], education = [], skills = [], languages = [], projects = [], awards = [] } = resume;
 
-  const primaryColor = hexNoHash(brand.colors.primary);
-  const textColor = hexNoHash(brand.colors.text);
-  const headingFont = brand.fonts.heading;
-  const bodyFont = brand.fonts.body;
+  const styles = toDocxStyles(brand);
+  const small = styles.small ?? styles.body;
+  // No distinct "name" style in brand-kit's docx output — scale heading1 up to
+  // keep the same visual ratio the hand-rolled styling used (40hp / 28hp ≈ 1.4).
+  const nameSize = Math.round(styles.heading1.size * 1.4);
 
   const heading = (text: string) =>
     new Paragraph({
       heading: HeadingLevel.HEADING_1,
       spacing: { before: 240, after: 120 },
-      border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: primaryColor } },
-      children: [new TextRun({ text, bold: true, color: primaryColor, font: headingFont, size: 28 })],
+      border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: styles.colors.primary } },
+      children: [
+        new TextRun({ text, bold: true, color: styles.heading1.color, font: styles.heading1.font, size: styles.heading1.size }),
+      ],
     });
 
   const subheading = (text: string) =>
     new Paragraph({
       spacing: { before: 160, after: 60 },
-      children: [new TextRun({ text, bold: true, color: textColor, font: headingFont, size: 24 })],
+      children: [
+        new TextRun({ text, bold: true, color: styles.heading3.color, font: styles.heading3.font, size: styles.heading3.size }),
+      ],
     });
 
   const body = (text: string) =>
     new Paragraph({
       spacing: { after: 80 },
-      children: [new TextRun({ text, color: textColor, font: bodyFont, size: 22 })],
+      children: [new TextRun({ text, color: styles.body.color, font: styles.body.font, size: styles.body.size })],
     });
 
   const bullet = (text: string) =>
     new Paragraph({
       bullet: { level: 0 },
       spacing: { after: 40 },
-      children: [new TextRun({ text, color: textColor, font: bodyFont, size: 22 })],
+      children: [new TextRun({ text, color: styles.body.color, font: styles.body.font, size: styles.body.size })],
     });
 
   const children: Paragraph[] = [];
@@ -63,14 +65,16 @@ function main() {
     new Paragraph({
       alignment: AlignmentType.LEFT,
       spacing: { after: 40 },
-      children: [new TextRun({ text: basics?.name ?? "", bold: true, color: primaryColor, font: headingFont, size: 40 })],
+      children: [
+        new TextRun({ text: basics?.name ?? "", bold: true, color: styles.colors.primary, font: styles.heading1.font, size: nameSize }),
+      ],
     })
   );
   if (basics?.label) {
     children.push(
       new Paragraph({
         spacing: { after: 120 },
-        children: [new TextRun({ text: basics.label, italics: true, color: textColor, font: bodyFont, size: 24 })],
+        children: [new TextRun({ text: basics.label, italics: true, color: small.color, font: small.font, size: small.size })],
       })
     );
   }

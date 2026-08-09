@@ -6,6 +6,7 @@ build/
 packages/site/src/data/
 packages/site/src/theme.css
 packages/shared/src/generated/
+packages/brand-kit/src/generated/
 .env
 *.log
 .DS_Store

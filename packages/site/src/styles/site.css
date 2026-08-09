@@ -8,7 +8,7 @@ body {
   padding: 0;
   background: var(--color-background);
   color: var(--color-text);
-  font-family: var(--font-body), system-ui, sans-serif;
+  font-family: var(--font-web-family);
   line-height: 1.55;
 }
 
@@ -38,7 +38,7 @@ body {
 }
 
 .section h2 {
-  font-family: var(--font-heading), system-ui, sans-serif;
+  font-family: var(--font-web-family);
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -62,13 +62,13 @@ body {
   border-radius: 50%;
   background: var(--color-primary);
   color: var(--color-background);
-  font-family: var(--font-heading), system-ui, sans-serif;
+  font-family: var(--font-web-family);
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .name {
-  font-family: var(--font-heading), system-ui, sans-serif;
+  font-family: var(--font-web-family);
   font-size: 2.2rem;
   margin: 0 0 0.25rem;
   color: var(--color-text);

@@ -1,13 +1,70 @@
 {
+  "meta": {
+    "name": "Danil Shubin",
+    "version": "1.0.0",
+    "description": "Personal CV brand tokens, used to generate the resume site, PDF, DOCX, and text exports.",
+    "updatedAt": "2026-08-10"
+  },
+  "identity": {
+    "displayName": "Danil Shubin"
+  },
+  "logo": {
+    "text": "DS"
+  },
   "colors": {
     "primary": "#2563eb",
     "secondary": "#0ea5e9",
     "text": "#1f2937",
-    "background": "#ffffff"
+    "background": "#ffffff",
+    "border": "#e2e8f0"
   },
-  "fonts": {
-    "heading": "Inter",
-    "body": "Inter"
+  "typography": {
+    "webFont": {
+      "family": "Inter",
+      "fallback": ["system-ui", "sans-serif"]
+    },
+    "printFont": {
+      "family": "Inter",
+      "fallback": ["Arial", "sans-serif"]
+    },
+    "sizes": {
+      "h1": "14pt",
+      "h2": "12pt",
+      "h3": "11pt",
+      "body": "11pt",
+      "small": "9pt"
+    },
+    "weights": {
+      "regular": 400,
+      "medium": 500,
+      "bold": 700
+    },
+    "lineHeight": {
+      "heading": 1.2,
+      "body": 1.55
+    }
   },
-  "logoText": "DS"
+  "spacing": {
+    "unit": 8,
+    "borderRadius": 6
+  },
+  "layout": {
+    "web": {
+      "maxWidth": "820px",
+      "containerPadding": "24px"
+    },
+    "document": {
+      "pageSize": "A4",
+      "margins": {
+        "top": "15mm",
+        "right": "12mm",
+        "bottom": "15mm",
+        "left": "12mm"
+      }
+    },
+    "email": {
+      "maxWidth": "600px",
+      "contentPadding": "16px"
+    }
+  }
 }

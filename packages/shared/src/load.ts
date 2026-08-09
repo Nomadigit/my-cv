@@ -1,8 +1,9 @@
 import fs from "fs";
+import { validateBrand } from "@my-cv/brand-kit";
+import type { BrandFile } from "@my-cv/brand-kit";
 import { RESUME_JSON_PATH, BRAND_JSON_PATH } from "./paths";
-import { assertValidResume, assertValidBrand } from "./validate";
+import { assertValidResume } from "./validate";
 import type { ResumeSchema } from "./generated/resume";
-import type { Brand } from "./generated/brand";
 
 export function loadResume(): ResumeSchema {
   const data = JSON.parse(fs.readFileSync(RESUME_JSON_PATH, "utf-8"));
@@ -10,8 +11,7 @@ export function loadResume(): ResumeSchema {
   return data as ResumeSchema;
 }
 
-export function loadBrand(): Brand {
+export function loadBrand(): BrandFile {
   const data = JSON.parse(fs.readFileSync(BRAND_JSON_PATH, "utf-8"));
-  assertValidBrand(data);
-  return data as Brand;
+  return validateBrand(data);
 }

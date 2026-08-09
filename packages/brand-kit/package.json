@@ -1,5 +1,5 @@
 {
-  "name": "@my-cv/shared",
+  "name": "@my-cv/brand-kit",
   "version": "1.0.0",
   "private": true,
   "main": "dist/src/index.js",
@@ -8,15 +8,15 @@
     "generate-types": "node scripts/generate-types.js",
     "prebuild": "npm run generate-types",
     "build": "tsc -p tsconfig.json",
-    "validate-data": "node scripts/validate-data.js"
+    "test": "vitest run"
   },
   "dependencies": {
-    "@my-cv/brand-kit": "*",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1"
   },
   "devDependencies": {
     "json-schema-to-typescript": "^15.0.3",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
   }
 }

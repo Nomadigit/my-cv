@@ -76,16 +76,4 @@ export interface ResumeData {
   languages?: LanguageItem[];
 }
 
-export interface BrandData {
-  colors: {
-    primary: string;
-    secondary: string;
-    text: string;
-    background: string;
-  };
-  fonts: {
-    heading: string;
-    body: string;
-  };
-  logoText: string;
-}
+export type { BrandFile as BrandData } from "@my-cv/brand-kit";

@@ -1,0 +1,185 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://brand-kit.local/schema/brand.schema.json",
+  "title": "BrandFile",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["meta", "identity", "colors", "typography", "spacing", "layout"],
+  "definitions": {
+    "colorValue": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fontStack": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["family"],
+      "properties": {
+        "family": { "type": "string", "minLength": 1 },
+        "fallback": { "type": "array", "items": { "type": "string" } },
+        "src": { "type": "string" }
+      }
+    }
+  },
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date" }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["displayName"],
+      "properties": {
+        "displayName": { "type": "string", "minLength": 1 },
+        "tagline": { "type": "string" },
+        "legalName": { "type": "string" },
+        "website": { "type": "string", "format": "uri" },
+        "email": { "type": "string", "format": "email" }
+      }
+    },
+    "logo": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "text": { "type": "string" },
+        "lightSrc": { "type": "string" },
+        "darkSrc": { "type": "string" },
+        "favicon": { "type": "string" },
+        "minSize": { "type": "number" },
+        "clearSpace": { "type": "number" }
+      }
+    },
+    "colors": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["primary", "text", "background"],
+      "properties": {
+        "primary": { "$ref": "#/definitions/colorValue" },
+        "secondary": { "$ref": "#/definitions/colorValue" },
+        "accent": { "$ref": "#/definitions/colorValue" },
+        "semantic": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "success": { "$ref": "#/definitions/colorValue" },
+            "warning": { "$ref": "#/definitions/colorValue" },
+            "error": { "$ref": "#/definitions/colorValue" },
+            "info": { "$ref": "#/definitions/colorValue" }
+          }
+        },
+        "text": { "$ref": "#/definitions/colorValue" },
+        "background": { "$ref": "#/definitions/colorValue" },
+        "border": { "$ref": "#/definitions/colorValue" },
+        "darkMode": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "primary": { "$ref": "#/definitions/colorValue" },
+            "secondary": { "$ref": "#/definitions/colorValue" },
+            "accent": { "$ref": "#/definitions/colorValue" },
+            "text": { "$ref": "#/definitions/colorValue" },
+            "background": { "$ref": "#/definitions/colorValue" },
+            "border": { "$ref": "#/definitions/colorValue" },
+            "logoSrc": { "type": "string" }
+          }
+        }
+      }
+    },
+    "typography": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["webFont", "printFont", "sizes", "weights"],
+      "properties": {
+        "webFont": { "$ref": "#/definitions/fontStack" },
+        "printFont": { "$ref": "#/definitions/fontStack" },
+        "sizes": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "weights": {
+          "type": "object",
+          "additionalProperties": { "type": "number" }
+        },
+        "lineHeight": {
+          "type": "object",
+          "additionalProperties": { "type": "number" }
+        }
+      }
+    },
+    "spacing": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "unit": { "type": "number" },
+        "borderRadius": { "type": "number" }
+      }
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "web": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "maxWidth": { "type": "string" },
+            "containerPadding": { "type": "string" }
+          }
+        },
+        "document": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "pageSize": { "type": "string" },
+            "margins": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "top": { "type": "string" },
+                "right": { "type": "string" },
+                "bottom": { "type": "string" },
+                "left": { "type": "string" }
+              }
+            }
+          }
+        },
+        "email": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "maxWidth": { "type": "string" },
+            "contentPadding": { "type": "string" }
+          }
+        }
+      }
+    },
+    "letterhead": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "addressLines": { "type": "array", "items": { "type": "string" } },
+        "footerText": { "type": "string" },
+        "showLogoOn": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["document", "email"] }
+        }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "tone": { "type": "array", "items": { "type": "string" } },
+        "avoid": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
