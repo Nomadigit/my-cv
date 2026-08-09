@@ -19,7 +19,7 @@ function buildSiteForLocalPreview(): void {
   execSync("npm run build -w @my-cv/site", {
     cwd: REPO_ROOT,
     stdio: "inherit",
-    env: { ...process.env, SITE_BASE: "/" },
+    env: { ...process.env, BASE_PATH: "/" },
   });
 }
 
