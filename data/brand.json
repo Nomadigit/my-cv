@@ -1,0 +1,13 @@
+{
+  "colors": {
+    "primary": "#2563eb",
+    "secondary": "#0ea5e9",
+    "text": "#1f2937",
+    "background": "#ffffff"
+  },
+  "fonts": {
+    "heading": "Inter",
+    "body": "Inter"
+  },
+  "logoText": "DS"
+}

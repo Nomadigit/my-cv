@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+/output/*
+!/output/.gitkeep
+packages/site/src/data/
+packages/site/src/theme.css
+packages/shared/src/generated/
+.env
+*.log
+.DS_Store

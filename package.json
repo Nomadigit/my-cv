@@ -1,0 +1,27 @@
+{
+  "name": "my-cv",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Single source of truth (resume.json + brand.json) -> site / PDF / DOCX / MD / TXT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:shared": "npm run build -w @my-cv/shared",
+    "validate:data": "npm run build:shared && npm run validate-data -w @my-cv/shared",
+    "build:site": "npm run build -w @my-cv/site",
+    "build:pdf": "npm run build -w @my-cv/pdf-renderer && npm run render -w @my-cv/pdf-renderer",
+    "build:docx": "npm run build -w @my-cv/docx-renderer && npm run render -w @my-cv/docx-renderer",
+    "build:md": "npm run build -w @my-cv/md-renderer && npm run render -w @my-cv/md-renderer",
+    "build:txt": "npm run build -w @my-cv/txt-renderer && npm run render -w @my-cv/txt-renderer",
+    "dev": "npm run dev -w @my-cv/site",
+    "build:all": "npm run validate:data && npm run build:md && npm run build:txt && npm run build:docx && npm run build:site && npm run build:pdf"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
