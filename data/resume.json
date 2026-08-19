@@ -2,9 +2,9 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
   "basics": {
     "name": "Danil Shubin",
-    "label": "Backend Developer",
+    "label": "Senior Backend Developer (Java / Kotlin / Spring Boot)",
     "phone": "",
-    "summary": "Backend Developer with 9+ years of IT experience, including almost 4 years designing and building scalable web applications with Java, Kotlin, and Spring Boot. Skilled in microservices architecture, CI/CD optimization and production incident management. Passionate about clean architecture, system scalability and continuous improvement.",
+    "summary": "Result-driven Senior Backend Developer with 9+ years of IT experience, specializing in designing, building, and scaling high-throughput distributed systems using Java, Kotlin, and Spring Boot. Pioneer in accelerating development lifecycle through advanced AI/LLM orchestration (MCP architecture, custom Agentic workflows, Open-source models). Expert in microservices architecture, cloud-native environments, legacy system decommissioning, and high-load financial platforms with a deep focus on clean architecture, robust integration workflows, and continuous delivery.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -24,30 +24,48 @@
     {
       "name": "Raiffeisen Bank Russia",
       "position": "Senior Backend Developer / Backend Developer",
-      "startDate": "2021-11-01",
+      "startDate": "2021-11-02",
       "highlights": [
-        "Built and maintained 10+ microservices for SME banking (forex, payments, payroll) serving thousands of users daily",
-        "Led feature development end-to-end, from technical design to production monitoring",
-        "Troubleshot production incidents using RCA, canary deployments, and monitoring-driven debugging",
-        "Optimized CI/CD pipelines, cutting deployment times by 60% and improving release stability",
-        "Increased codebase quality by boosting test coverage to >80%, reducing incidents by ~35%",
-        "Adopted agentic coding workflows using OpenCode and internal AI tooling, building custom agents and skills for day-to-day development"
+        "Designed, developed, and maintained 10+ mission-critical microservices using Kotlin (including Coroutines), Java, and Spring Boot for SME banking serving thousands of active daily users",
+        "Successfully led the complex decommissioning of legacy CRM systems, architecting and implementing new high-performance substitute services from scratch without business interruption",
+        "Architected asynchronous, event-driven data flows using Apache Kafka, RabbitMQ, and Apache Avro for strongly-typed schema registry and data serialization",
+        "Re-engineered database persistence layers leveraging jOOQ, MapStruct, and SQL optimization; integrated Flyway alongside Liquibase for seamless migration versioning",
+        "Boosted personal and team delivery speed by integrating AI-assisted engineering workflows: developed custom prompt-skills, and orchestrated AI Agents using Opencode, specialized plugins, and Model Context Protocol (MCP) services",
+        "Explored cloud-native innovations by driving a PoC initiative leveraging GraalVM Native Images to optimize container cold-start efficiency within microservices; managed services configuration via Spring Cloud",
+        "Transitioned legacy modules to reactive programming with Spring WebFlux and R2DBC, significantly increasing application throughput",
+        "Optimized enterprise CI/CD pipelines using Maven, Gradle, and GitHub Actions within GitLab, incorporating automated static code analysis via SonarQube",
+        "Boosted codebase reliability by increasing unit and integration test coverage (JUnit, Mockito, Mockk, Testcontainers, WireMock) to 80%+, resulting in a ~35% drop in production incidents",
+        "Troubleshooting and resolving complex production incidents utilizing Prometheus, Grafana, and Kibana for root cause analysis (RCA)"
       ]
     },
     {
       "name": "Raiffeisen Bank Russia",
-      "position": "Senior QA Engineer",
-      "startDate": "2020-07-01",
+      "position": "Senior QA Engineer / QA Engineer",
+      "startDate": "2018-03-02",
       "endDate": "2021-11-01",
       "highlights": [
-        "Automated 90% of E2E test cases and integrated suites into CI/CD pipelines"
+        "Created automation frameworks (Web, iOS, Android)",
+        "Achieved 90% automation of E2E manual tests",
+        "Set up E2E-autotests in CI/CD pipelines",
+        "Train and assist in test-automation for other teams",
+        "Load testing",
+        "Manual testing of mobile applications and web applications",
+        "Conduct feature-reviews with clients and stakeholders",
+        "Organize and modify test management processes"
       ]
     },
     {
-      "name": "Raiffeisen Bank Russia",
-      "position": "QA Engineer, Implementation Specialist, Development Assistant",
-      "startDate": "2016-01-01",
-      "endDate": "2020-07-01",
+      "name": "Diasoft",
+      "position": "Implementation Specialist",
+      "startDate": "2016-10-02",
+      "endDate": "2018-03-01",
+      "highlights": []
+    },
+    {
+      "name": "Samsung Electronics",
+      "position": "Development Assistant",
+      "startDate": "2016-03-01",
+      "endDate": "2016-10-01",
       "highlights": []
     }
   ],
@@ -169,10 +187,6 @@
     {
       "language": "English",
       "fluency": "Fluent"
-    },
-    {
-      "language": "Hebrew",
-      "fluency": "Beginner"
     }
   ],
   "projects": [],
