@@ -56,10 +56,10 @@
     "document": {
       "pageSize": "A4",
       "margins": {
-        "top": "15mm",
-        "right": "12mm",
-        "bottom": "15mm",
-        "left": "12mm"
+        "top": "10mm",
+        "right": "10mm",
+        "bottom": "10mm",
+        "left": "10mm"
       }
     },
     "email": {

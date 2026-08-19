@@ -1,22 +1,74 @@
 .print-page {
-  padding: 0.75rem 1rem;
+  padding: 0;
   max-width: 100%;
+  font-size: 9pt;
+  line-height: 1.18;
 }
 
 .print-page .section {
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.4rem;
   page-break-inside: avoid;
   break-inside: avoid;
 }
 
 .print-page .entry {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
   page-break-inside: avoid;
   break-inside: avoid;
 }
 
 .print-page .header {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.3rem;
+}
+
+.print-page .logo {
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 0.75rem;
+  margin-bottom: 0.3rem;
+}
+
+.print-page .name {
+  font-size: 16pt;
+  margin: 0 0 0.1rem;
+}
+
+.print-page .label {
+  font-size: 10pt;
+  margin: 0 0 0.25rem;
+}
+
+.print-page .contact-row {
+  font-size: 8pt;
+  gap: 0.4rem;
+}
+
+.print-page .section h2 {
+  font-size: 10pt;
+  margin-bottom: 0.25rem;
+  padding-bottom: 0.08rem;
+  border-bottom-width: 1px;
+}
+
+.print-page .entry-dates {
+  font-size: 8pt;
+}
+
+.print-page ul {
+  margin: 0.12rem 0 0;
+  padding-left: 0.9rem;
+}
+
+.print-page li {
+  margin-bottom: 0.06rem;
+}
+
+.print-page .skill-group {
+  margin-bottom: 0.1rem;
+}
+
+.print-page .languages-list {
+  gap: 1rem;
 }
 
 @media print {
