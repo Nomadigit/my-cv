@@ -24,7 +24,7 @@
     {
       "name": "Raiffeisen Bank Russia",
       "position": "Senior Backend Developer / Backend Developer",
-      "startDate": "2021-11-02",
+      "startDate": "2021-11",
       "highlights": [
         "Designed, developed, and maintained 10+ mission-critical microservices using Kotlin (including Coroutines), Java, and Spring Boot for SME banking serving thousands of active daily users",
         "Successfully led the complex decommissioning of legacy CRM systems, architecting and implementing new high-performance substitute services from scratch without business interruption",
@@ -41,8 +41,8 @@
     {
       "name": "Raiffeisen Bank Russia",
       "position": "Senior QA Engineer / QA Engineer",
-      "startDate": "2018-03-02",
-      "endDate": "2021-11-01",
+      "startDate": "2018-03",
+      "endDate": "2021-11",
       "highlights": [
         "Created automation frameworks (Web, iOS, Android)",
         "Achieved 90% automation of E2E manual tests",
@@ -57,15 +57,15 @@
     {
       "name": "Diasoft",
       "position": "Implementation Specialist",
-      "startDate": "2016-10-02",
-      "endDate": "2018-03-01",
+      "startDate": "2016-10",
+      "endDate": "2018-03",
       "highlights": []
     },
     {
       "name": "Samsung Electronics",
       "position": "Development Assistant",
-      "startDate": "2016-03-01",
-      "endDate": "2016-10-01",
+      "startDate": "2016-03",
+      "endDate": "2016-10",
       "highlights": []
     }
   ],
