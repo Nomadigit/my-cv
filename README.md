@@ -43,6 +43,29 @@ output/           generated artifacts (gitignored except for a .gitkeep)
 Never hand-edit anything under `output/` or inside a renderer's own source data — edits belong in
 `data/resume.json` / `data/brand.json` only.
 
+## Contact details (keeping them out of git)
+
+`data/resume.json` is committed, so real contact info (phone, email, home address, city, country,
+Telegram handle) shouldn't be hardcoded in it. Instead, copy `.env.example` to `.env` (gitignored)
+and fill in whichever of these you want populated:
+
+```
+RESUME_PHONE=
+RESUME_EMAIL=
+RESUME_ADDRESS=
+RESUME_CITY=
+RESUME_COUNTRY_CODE=
+RESUME_TELEGRAM=
+```
+
+`loadResume()` (used by every renderer, including the site build) overlays these onto
+`basics.phone`, `basics.email`, `basics.location.address`, `basics.location.city`,
+`basics.location.countryCode`, and a `Telegram` entry in `basics.profiles` — see
+`packages/shared/src/confidential.ts`. Any var left unset keeps whatever is already in
+`resume.json` (empty string, by default). For CI/GitHub Pages builds, set the same names as
+repository secrets (**Settings → Secrets and variables → Actions**); the workflow passes them
+through as job-level env vars.
+
 ## Local development
 
 ```bash

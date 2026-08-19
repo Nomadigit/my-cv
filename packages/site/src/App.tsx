@@ -9,13 +9,14 @@ const resume = resumeData as ResumeData;
 const brand = brandData as BrandData;
 
 const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
+const logoText = brand.logo?.enabled === false ? undefined : brand.logo?.text;
 
 export function App() {
   return (
     <BrowserRouter basename={basename}>
       <Routes>
-        <Route path="/" element={<Site resume={resume} logoText={brand.logo?.text} />} />
-        <Route path="/print" element={<Print resume={resume} logoText={brand.logo?.text} />} />
+        <Route path="/" element={<Site resume={resume} logoText={logoText} />} />
+        <Route path="/print" element={<Print resume={resume} logoText={logoText} />} />
       </Routes>
     </BrowserRouter>
   );

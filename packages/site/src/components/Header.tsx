@@ -16,7 +16,7 @@ export function Header({ basics, logoText }: HeaderProps) {
       {basics.label && <p className="label">{basics.label}</p>}
       <div className="contact-row">
         {location && <span>{location}</span>}
-        {basics.email && <span>{basics.email}</span>}
+        {basics.email && <a href={`mailto:${basics.email}`}>{basics.email}</a>}
         {basics.phone && <span>{basics.phone}</span>}
         {(basics.profiles ?? []).map((profile) => (
           <a key={profile.network} href={profile.url} target="_blank" rel="noreferrer">

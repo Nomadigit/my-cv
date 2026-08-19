@@ -9,11 +9,13 @@
     "displayName": "Danil Shubin"
   },
   "logo": {
+    "enabled": false,
     "text": "DS"
   },
   "colors": {
     "primary": "#2563eb",
     "secondary": "#0ea5e9",
+    "accent": "#0f766e",
     "text": "#1f2937",
     "background": "#ffffff",
     "border": "#e2e8f0"

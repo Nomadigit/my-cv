@@ -21,6 +21,13 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      RESUME_PHONE: ${{ secrets.RESUME_PHONE }}
+      RESUME_EMAIL: ${{ secrets.RESUME_EMAIL }}
+      RESUME_ADDRESS: ${{ secrets.RESUME_ADDRESS }}
+      RESUME_CITY: ${{ secrets.RESUME_CITY }}
+      RESUME_COUNTRY_CODE: ${{ secrets.RESUME_COUNTRY_CODE }}
+      RESUME_TELEGRAM: ${{ secrets.RESUME_TELEGRAM }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

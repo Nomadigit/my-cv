@@ -1,18 +1,17 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { validateBrand, toWebCss } from "@my-cv/brand-kit";
+import { toWebCss } from "@my-cv/brand-kit";
+import { loadResume, loadBrand } from "@my-cv/shared";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const REPO_ROOT = path.resolve(__dirname, "../../../");
-const DATA_DIR = path.join(REPO_ROOT, "data");
 const OUT_DATA_DIR = path.resolve(__dirname, "../src/data");
 const OUT_THEME_CSS = path.resolve(__dirname, "../src/theme.css");
 
 fs.mkdirSync(OUT_DATA_DIR, { recursive: true });
 
-const resume = JSON.parse(fs.readFileSync(path.join(DATA_DIR, "resume.json"), "utf-8"));
-const brand = validateBrand(JSON.parse(fs.readFileSync(path.join(DATA_DIR, "brand.json"), "utf-8")));
+const resume = loadResume();
+const brand = loadBrand();
 
 fs.writeFileSync(path.join(OUT_DATA_DIR, "resume.json"), JSON.stringify(resume, null, 2));
 fs.writeFileSync(path.join(OUT_DATA_DIR, "brand.json"), JSON.stringify(brand, null, 2));
