@@ -1,72 +1,20 @@
 {
   "meta": {
-    "name": "Danil Shubin",
-    "version": "1.0.0",
-    "description": "Personal CV brand tokens, used to generate the resume site, PDF, DOCX, and text exports.",
-    "updatedAt": "2026-08-10"
+    "name": "Danil Shubin CV",
+    "version": "2.0.0",
+    "description": "CV overrides on top of the Nomadigit brand (@nomadigit/brand): print sizes and page margins.",
+    "updatedAt": "2026-10-04"
   },
-  "identity": {
-    "displayName": "Danil Shubin"
-  },
-  "logo": {
-    "enabled": false,
-    "text": "DS"
-  },
-  "colors": {
-    "primary": "#2563eb",
-    "secondary": "#0ea5e9",
-    "accent": "#0f766e",
-    "text": "#1f2937",
-    "background": "#ffffff",
-    "border": "#e2e8f0"
-  },
+  "identity": { "displayName": "Danil Shubin" },
+  "logo": { "enabled": false },
   "typography": {
-    "webFont": {
-      "family": "Inter",
-      "fallback": ["system-ui", "sans-serif"]
-    },
-    "printFont": {
-      "family": "Inter",
-      "fallback": ["Arial", "sans-serif"]
-    },
-    "sizes": {
-      "h1": "14pt",
-      "h2": "12pt",
-      "h3": "11pt",
-      "body": "11pt",
-      "small": "9pt"
-    },
-    "weights": {
-      "regular": 400,
-      "medium": 500,
-      "bold": 700
-    },
-    "lineHeight": {
-      "heading": 1.2,
-      "body": 1.55
-    }
-  },
-  "spacing": {
-    "unit": 8,
-    "borderRadius": 6
+    "sizes": { "h1": "14pt", "h2": "12pt", "h3": "11pt", "body": "11pt", "small": "9pt" }
   },
   "layout": {
-    "web": {
-      "maxWidth": "820px",
-      "containerPadding": "24px"
-    },
+    "web": { "maxWidth": "820px" },
     "document": {
       "pageSize": "A4",
-      "margins": {
-        "top": "10mm",
-        "right": "10mm",
-        "bottom": "10mm",
-        "left": "10mm"
-      }
-    },
-    "email": {
-      "maxWidth": "600px",
-      "contentPadding": "16px"
+      "margins": { "top": "10mm", "right": "10mm", "bottom": "10mm", "left": "10mm" }
     }
   }
 }

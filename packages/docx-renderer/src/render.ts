@@ -10,7 +10,7 @@ import {
   BorderStyle,
 } from "docx";
 import { loadResume, loadBrand, OUTPUT_DIR } from "@my-cv/shared";
-import { toDocxStyles } from "@my-cv/brand-kit";
+import { toDocxStyles } from "@nomadigit/brand";
 
 function formatDate(date: string): string {
   const [y, m, d] = date.split("-");
@@ -31,7 +31,7 @@ function main() {
 
   const styles = toDocxStyles(brand);
   const small = styles.small ?? styles.body;
-  // No distinct "name" style in brand-kit's docx output — scale heading1 up to
+  // No distinct "name" style in the brand's docx output — scale heading1 up to
   // keep the same visual ratio the hand-rolled styling used (40hp / 28hp ≈ 1.4).
   const nameSize = Math.round(styles.heading1.size * 1.4);
 

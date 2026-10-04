@@ -76,4 +76,4 @@ export interface ResumeData {
   languages?: LanguageItem[];
 }
 
-export type { BrandFile as BrandData } from "@my-cv/brand-kit";
+export type { BrandFile as BrandData } from "@nomadigit/brand";

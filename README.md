@@ -5,7 +5,8 @@ Single source of truth → website / PDF / DOCX / Markdown / LinkedIn text.
 All output formats are generated from two files:
 
 - `data/resume.json` — resume content, in [JSON Resume](https://jsonresume.org/schema/) format.
-- `data/brand.json` — design tokens (colors, fonts, logo text) shared by every renderer.
+- `data/brand.json` — CV-specific overrides (print sizes, margins) on top of the Nomadigit brand
+  from [`@nomadigit/brand`](https://github.com/Nomadigit/brand).
 
 Edit those two files and re-run the build; every output (site, PDF, DOCX, MD, TXT) picks up the change.
 
@@ -14,13 +15,12 @@ Edit those two files and re-run the build; every output (site, PDF, DOCX, MD, TX
 ```
 data/
   resume.json          source of truth for content
-  brand.json            source of truth for design tokens
+  brand.json            CV overrides merged onto @nomadigit/brand
   schema/
     resume.schema.json  JSON Resume schema (used for validation + type generation)
-    brand.schema.json   schema for brand.json
 
 packages/
-  shared/         loadResume()/loadBrand() + ajv validation + generated TS types + theme.ts
+  shared/         loadResume()/loadBrand() + ajv validation + generated TS types
   site/           React + Vite site (the only package that uses React), with a `/` interactive
                   route and a `/print` print-optimized route used by pdf-renderer
   pdf-renderer/   Playwright script: builds/serves the site (or hits SITE_URL), screenshots
@@ -34,7 +34,7 @@ output/           generated artifacts (gitignored except for a .gitkeep)
 
 ## Updating your resume
 
-1. Edit `data/resume.json` (and `data/brand.json` for colors/fonts).
+1. Edit `data/resume.json` (brand colors/fonts live in the Nomadigit/brand repo).
 2. Run `npm run build:all` (see below) — this validates the data against the JSON schemas first
    and fails with a clear error if something doesn't conform.
 3. All five outputs (`output/resume.pdf`, `output/resume.docx`, `output/resume.md`,

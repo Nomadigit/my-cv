@@ -7,8 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build:brand-kit": "npm run build -w @my-cv/brand-kit",
-    "build:shared": "npm run build:brand-kit && npm run build -w @my-cv/shared",
+    "build:shared": "npm run build -w @my-cv/shared",
     "validate:data": "npm run build:shared && npm run validate-data -w @my-cv/shared",
     "build:site": "npm run build -w @my-cv/site",
     "build:pdf": "npm run build -w @my-cv/pdf-renderer && npm run render -w @my-cv/pdf-renderer",
@@ -17,6 +16,9 @@
     "build:txt": "npm run build -w @my-cv/txt-renderer && npm run render -w @my-cv/txt-renderer",
     "dev": "npm run dev -w @my-cv/site",
     "build:all": "npm run validate:data && npm run build:md && npm run build:txt && npm run build:docx && npm run build:site && npm run build:pdf"
+  },
+  "dependencies": {
+    "@nomadigit/brand": "git+https://github.com/Nomadigit/brand.git#v1.0.1"
   },
   "devDependencies": {
     "@types/node": "^22.9.0",

@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "@nomadigit/brand/fonts.css";
 import "./theme.css";
 import "./styles/site.css";
 import "./styles/print.css";

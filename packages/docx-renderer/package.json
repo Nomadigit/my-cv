@@ -7,7 +7,6 @@
     "render": "node dist/render.js"
   },
   "dependencies": {
-    "@my-cv/brand-kit": "*",
     "@my-cv/shared": "*",
     "docx": "^9.1.1"
   },
