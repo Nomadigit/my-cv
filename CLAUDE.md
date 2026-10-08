@@ -10,7 +10,7 @@ text file from two source-of-truth data files:
 - `data/resume.json` — content, in [JSON Resume](https://jsonresume.org/schema/) format.
 - `data/brand.json` — **CV-specific overrides only** (print font sizes in pt, A4 margins, logo off).
   The brand itself (colors, fonts, logo, spacing, dark mode) comes from the external package
-  `@nomadigit/brand` (github.com/Nomadigit/brand, pinned to a tag in the root `package.json`).
+  `@nomadigit/brand` (github.com/Nomadigit/brand, pinned to a tag or commit in the root `package.json`).
   `loadBrand()` deep-merges the overrides onto the package's `tokens/brand.json` and validates the
   result against the package's schema. To change brand colors/fonts, change the brand repo and bump
   the tag here; don't redefine them in `data/brand.json`.
@@ -75,5 +75,7 @@ error message on invalid data.
   `npm install "@nomadigit/brand@git+https://github.com/Nomadigit/brand.git#vX.Y.Z"` (a plain
   `npm install` after editing the tag keeps the old commit from the lockfile).
 - Visual changes follow the Nomadigit brand rules (`node_modules/@nomadigit/brand/AGENTS.md`):
-  colors only via CSS variables from `theme.css` (`--color-*`), never the accent for text.
+  colors only via CSS variables from `theme.css` (`--color-*`), never the accent for text. Contacts
+  use the mono font (`--font-mono-family`, Geist Mono); dates, labels and numbers stay in Onest
+  (`tabular-nums`), no italics.
 - Git history exists; check `git status` / `git log` before assuming the working tree is clean.
