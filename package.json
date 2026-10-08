@@ -18,7 +18,7 @@
     "build:all": "npm run validate:data && npm run build:md && npm run build:txt && npm run build:docx && npm run build:site && npm run build:pdf"
   },
   "dependencies": {
-    "@nomadigit/brand": "git+https://github.com/Nomadigit/brand.git#v1.0.1"
+    "@nomadigit/brand": "git+https://github.com/Nomadigit/brand.git#cd3e8044853f3c700ee36229106cd612f2e295dd"
   },
   "devDependencies": {
     "@types/node": "^22.9.0",

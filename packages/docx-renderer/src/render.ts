@@ -34,6 +34,8 @@ function main() {
   // No distinct "name" style in the brand's docx output — scale heading1 up to
   // keep the same visual ratio the hand-rolled styling used (40hp / 28hp ≈ 1.4).
   const nameSize = Math.round(styles.heading1.size * 1.4);
+  // Contacts go in the brand's mono font (CV recipe); toDocxStyles() has no mono style.
+  const monoFont = brand.typography.monoFont?.family ?? styles.body.font;
 
   const heading = (text: string) =>
     new Paragraph({
@@ -81,7 +83,7 @@ function main() {
     children.push(
       new Paragraph({
         spacing: { after: 120 },
-        children: [new TextRun({ text: basics.label, italics: true, color: small.color, font: small.font, size: small.size })],
+        children: [new TextRun({ text: basics.label, color: styles.colors.primary, font: small.font, size: small.size })],
       })
     );
   }
@@ -90,7 +92,12 @@ function main() {
     ...(basics?.profiles ?? []).map((p) => p.url),
   ].filter(Boolean) as string[];
   if (contactBits.length > 0) {
-    children.push(body(contactBits.join("  |  ")));
+    children.push(
+      new Paragraph({
+        spacing: { after: 80 },
+        children: [new TextRun({ text: contactBits.join("  |  "), color: styles.body.color, font: monoFont, size: small.size })],
+      })
+    );
   }
 
   if (basics?.summary) {

@@ -42,7 +42,7 @@ body {
   font-weight: var(--font-weight-display, 700);
   font-size: 1.1rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: var(--letter-spacing-label);
   color: var(--color-primary);
   border-bottom: 2px solid var(--color-primary);
   padding-bottom: 0.4rem;
@@ -87,6 +87,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  font-family: var(--font-mono-family, inherit);
   font-size: 0.9rem;
 }
 
@@ -114,8 +115,8 @@ body {
 
 .entry-dates {
   color: var(--color-muted);
-  font-family: var(--font-mono-family, inherit);
   font-weight: 400;
+  font-variant-numeric: tabular-nums;
   font-size: 0.9rem;
   white-space: nowrap;
 }
