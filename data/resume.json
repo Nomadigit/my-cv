@@ -268,7 +268,7 @@
         "GraalVM"
       ],
       "startDate": "2026-01",
-      "url": "https://t.me/REPLACE_WITH_REMINDER_BOT_USERNAME"
+      "url": "https://t.me/ReminderNomadigitBot"
     },
     {
       "name": "Piece · Nomadigit — expense-splitting app with Telegram sign-in and Mini App",
@@ -292,7 +292,7 @@
         "Telegram Mini App"
       ],
       "startDate": "2026-10",
-      "url": "https://t.me/REPLACE_WITH_PIECE_BOT_USERNAME"
+      "url": "https://t.me/PieceNomadigitBot"
     },
     {
       "name": "Resume-as-Code pipeline (my-cv)",
