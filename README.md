@@ -32,7 +32,7 @@ packages/
 output/           generated artifacts (gitignored except for a .gitkeep)
 assets/
   linkedin-banner.png  LinkedIn profile cover (1584×396), rendered in the brand repo with
-                       `npm run og -- "Senior Backend Developer" --kicker "Java · Kotlin · Spring Boot · AI agents" --size linkedin`
+                       `npm run og -- "Senior Backend Developer" --kicker "Java · Kotlin · Spring Boot · AI agents" --size linkedin --mark`
 ```
 
 ## Updating your resume
