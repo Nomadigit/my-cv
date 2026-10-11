@@ -121,6 +121,19 @@ body {
   white-space: nowrap;
 }
 
+.entry-link {
+  color: var(--color-link, var(--color-primary));
+  font-family: var(--font-mono-family, inherit);
+  font-weight: var(--font-weight-medium);
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.entry-link:hover {
+  text-decoration: underline;
+}
+
 .skill-group {
   margin-bottom: 0.5rem;
 }

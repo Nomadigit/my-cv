@@ -248,6 +248,53 @@
   ],
   "projects": [
     {
+      "name": "Reminder · Nomadigit — Telegram bot with Mini App",
+      "description": "Telegram bot for one-off and recurring reminders with per-user time zones, snooze presets and nag re-sends; reminders are managed in a Telegram Mini App served by the same binary. Solo project, in production on a Hetzner host.",
+      "highlights": [
+        "Go 1.27, PostgreSQL (pgx, goose migrations), Clean Architecture layering (entity / usecase / repository / telegram / webapp); first version written in Kotlin + Quarkus + Apache Camel Telegram with a GraalVM native image",
+        "Mini App JSON API authenticated by Telegram's signed initData (HMAC); natural-language date, recurrence and time-zone parser in EN/RU; bilingual message catalogue",
+        "Unit tests with the race detector, integration tests on a real PostgreSQL via testcontainers, Playwright e2e for the Mini App; GitHub Actions CI builds a static ARM64 binary and deploys it behind Caddy/TLS"
+      ],
+      "keywords": [
+        "Go",
+        "Telegram Bot API",
+        "Telegram Mini App",
+        "PostgreSQL",
+        "testcontainers",
+        "Playwright",
+        "GitHub Actions",
+        "Kotlin",
+        "Quarkus",
+        "GraalVM"
+      ],
+      "startDate": "2026-01",
+      "url": "https://t.me/REPLACE_WITH_REMINDER_BOT_USERNAME"
+    },
+    {
+      "name": "Piece · Nomadigit — expense-splitting app with Telegram sign-in and Mini App",
+      "description": "Splitwise-style app for splitting shared expenses in groups with no signup: the device generates an Ed25519 key that signs the user in; a Telegram bot links accounts, signs in new devices and opens the app as a Telegram Mini App. Android, iOS and Web from one Kotlin codebase plus a Kotlin backend.",
+      "highlights": [
+        "Kotlin Multiplatform + Compose Multiplatform (Android, iOS, Web/Wasm), Ktor server shipped as a GraalVM native image, PostgreSQL with jOOQ codegen from Flyway migrations, Koin DI",
+        "Event-sourced design: every change is an op in a per-group append-only log with idempotent op ids and a gap-free server sequence; balances and debt simplification are projections; offline-first clients queue ops and rebase them after sync",
+        "Security: challenge-response sign-in, rotating refresh tokens with reuse detection, HMAC access tokens, Telegram sign-in confirmed in the bot with a one-time code, Mini App initData validation, per-address and per-user rate limits, storage guard",
+        "Exact money arithmetic in ISO 4217 minor units, multi-currency groups with official central-bank rates; CI with ktlint/detekt, tests on JVM/Android/Wasm, native-image build and Hetzner deploy behind Caddy"
+      ],
+      "keywords": [
+        "Kotlin Multiplatform",
+        "Compose Multiplatform",
+        "Ktor",
+        "GraalVM",
+        "PostgreSQL",
+        "jOOQ",
+        "Flyway",
+        "Event Sourcing",
+        "Ed25519",
+        "Telegram Mini App"
+      ],
+      "startDate": "2026-10",
+      "url": "https://t.me/REPLACE_WITH_PIECE_BOT_USERNAME"
+    },
+    {
       "name": "Resume-as-Code pipeline (my-cv)",
       "description": "Open-source monorepo that generates a website, PDF, DOCX, Markdown, and LinkedIn text from a single JSON Resume source; built and maintained with AI agents (Claude Code) end-to-end.",
       "highlights": [

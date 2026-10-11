@@ -50,7 +50,8 @@
   border-bottom-width: 1px;
 }
 
-.print-page .entry-dates {
+.print-page .entry-dates,
+.print-page .entry-link {
   font-size: 8pt;
 }
 

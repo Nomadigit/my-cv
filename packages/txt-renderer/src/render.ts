@@ -68,6 +68,10 @@ function renderTxt(): string {
   if (projects.length > 0) {
     for (const project of projects) {
       const lines = [section(`PROJECTS — ${project.name}`)];
+      if (project.url) {
+        lines.push("");
+        lines.push(project.url);
+      }
       if (project.description) {
         lines.push("");
         lines.push(project.description);
