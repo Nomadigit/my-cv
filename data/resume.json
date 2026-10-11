@@ -2,9 +2,9 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
   "basics": {
     "name": "Danil Shubin",
-    "label": "Senior Backend Developer (Java / Kotlin / Spring Boot)",
+    "label": "Senior Backend Developer (Java / Kotlin / Spring Boot) · AI Agents & System Design",
     "phone": "",
-    "summary": "Result-driven Senior Backend Developer with 9+ years of IT experience, specializing in designing, building, and scaling high-throughput distributed systems using Java, Kotlin, and Spring Boot. Pioneer in accelerating development lifecycle through advanced AI/LLM orchestration (MCP architecture, custom Agentic workflows, Open-source models). Expert in microservices architecture, cloud-native environments, legacy system decommissioning, and high-load financial platforms with a deep focus on clean architecture, robust integration workflows, and continuous delivery.",
+    "summary": "Senior Backend Developer with 9+ years in IT, including 4+ years designing, building, and scaling high-throughput distributed systems in Java, Kotlin, and Spring Boot for a top-tier bank. Strong in system design: microservices, event-driven architecture, DDD, Clean/Hexagonal architecture, resilience and consistency patterns (Saga, Transactional Outbox, idempotency, Circuit Breaker). Early adopter of AI-native engineering: builds AI agents and LLM-powered bots, custom MCP servers, skills and agentic workflows (Claude Code, OpenCode, open-source models) that cut delivery time across the team. Hands-on with legacy decommissioning, cloud-native runtimes, CI/CD, observability, and production incident management.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -26,16 +26,24 @@
       "position": "Senior Backend Developer / Backend Developer",
       "startDate": "2021-11",
       "highlights": [
-        "Designed, developed, and maintained 10+ mission-critical microservices using Kotlin (including Coroutines), Java, and Spring Boot for SME banking serving thousands of active daily users",
-        "Successfully led the complex decommissioning of legacy CRM systems, architecting and implementing new high-performance substitute services from scratch without business interruption",
-        "Architected asynchronous, event-driven data flows using Apache Kafka, RabbitMQ, and Apache Avro for strongly-typed schema registry and data serialization",
-        "Re-engineered database persistence layers leveraging jOOQ, MapStruct, and SQL optimization; integrated Flyway alongside Liquibase for seamless migration versioning",
-        "Boosted personal and team delivery speed by integrating AI-assisted engineering workflows: developed custom prompt-skills, and orchestrated AI Agents using Opencode, specialized plugins, and Model Context Protocol (MCP) services",
+        "Designed, developed, and maintained 10+ mission-critical microservices (payments, forex, payroll) using Kotlin (incl. Coroutines), Java, and Spring Boot for SME banking serving thousands of active daily users",
+        "Owned system design end-to-end: gathered requirements, wrote technical design documents and ADRs, defined OpenAPI-first REST and gRPC contracts, data models and SLAs, and drove designs through architecture review",
+        "Applied DDD (bounded contexts, aggregates), Clean/Hexagonal architecture and SOLID; used GoF patterns (Strategy, Chain of Responsibility, Builder, Factory, Template Method, Observer) to keep business logic framework-independent and testable",
+        "Built reliable distributed workflows with Saga orchestration, Transactional Outbox, idempotent consumers, retries with backoff, dead-letter queues, and exactly-once-effect processing for money-moving operations",
+        "Implemented resilience patterns (Circuit Breaker, Retry, Bulkhead, Rate Limiting, timeouts) with Resilience4j and Redis-based caching, keeping services stable under partner-API degradation and peak load",
+        "Successfully led the complex decommissioning of legacy CRM systems, architecting and implementing new high-performance substitute services from scratch (Strangler Fig, Anti-Corruption Layer) without business interruption",
+        "Architected asynchronous, event-driven data flows using Apache Kafka, RabbitMQ, and Apache Avro with a schema registry for strongly-typed, backward-compatible event contracts",
+        "Re-engineered database persistence layers leveraging jOOQ, MapStruct, and SQL optimization (indexes, query plans, pagination); integrated Flyway alongside Liquibase for seamless migration versioning",
+        "Built AI agents and LLM-powered bots for engineering workflows: custom MCP (Model Context Protocol) servers exposing internal tools, agent skills and plugins for Claude Code and OpenCode, and multi-step agentic pipelines for code generation, code review, test generation, and documentation",
+        "Integrated LLMs into backend services via OpenAI-compatible APIs and self-hosted open-source models (Qwen, DeepSeek, GLM) using tool/function calling and RAG over internal docs; evaluated and benchmarked models for cost, latency, and quality",
+        "Boosted personal and team delivery speed by rolling out AI-assisted engineering practices: prompt-skills library, agent playbooks, and guardrails for secure use of LLMs with confidential banking data",
         "Explored cloud-native innovations by driving a PoC initiative leveraging GraalVM Native Images to optimize container cold-start efficiency within microservices; managed services configuration via Spring Cloud",
         "Transitioned legacy modules to reactive programming with Spring WebFlux and R2DBC, significantly increasing application throughput",
-        "Optimized enterprise CI/CD pipelines using Maven, Gradle, and GitHub Actions within GitLab, incorporating automated static code analysis via SonarQube",
+        "Secured APIs with Spring Security, OAuth2/OIDC and JWT via Keycloak; implemented role-based access control and audit logging",
+        "Optimized enterprise CI/CD pipelines using Maven, Gradle, and GitHub Actions within GitLab, incorporating automated static code analysis via SonarQube; cut deployment time by ~60% and introduced canary deployments",
         "Boosted codebase reliability by increasing unit and integration test coverage (JUnit, Mockito, Mockk, Testcontainers, WireMock) to 80%+, resulting in a ~35% drop in production incidents",
-        "Troubleshooting and resolving complex production incidents utilizing Prometheus, Grafana, and Kibana for root cause analysis (RCA)"
+        "Troubleshooting and resolving complex production incidents utilizing Prometheus, Grafana, and Kibana for root cause analysis (RCA); defined SLIs/SLOs, alerting rules and dashboards",
+        "Mentored developers and QA engineers, ran code reviews and design sessions, and set team-wide coding standards"
       ]
     },
     {
@@ -44,14 +52,11 @@
       "startDate": "2018-03",
       "endDate": "2021-11",
       "highlights": [
-        "Created automation frameworks (Web, iOS, Android)",
-        "Achieved 90% automation of E2E manual tests",
-        "Set up E2E-autotests in CI/CD pipelines",
-        "Train and assist in test-automation for other teams",
-        "Load testing",
-        "Manual testing of mobile applications and web applications",
-        "Conduct feature-reviews with clients and stakeholders",
-        "Organize and modify test management processes"
+        "Designed and built test automation frameworks for Web, iOS, and Android (Java, Selenium, Appium) using Page Object and test-data builder patterns",
+        "Achieved 90% automation of E2E manual tests and integrated suites into CI/CD pipelines with parallel execution and reporting",
+        "Performed load and performance testing (JMeter) and contract/API testing for backend services",
+        "Trained and assisted other teams in test automation; conducted feature reviews with clients and stakeholders",
+        "Manual testing of mobile and web applications; organized and improved test management processes"
       ]
     },
     {
@@ -59,14 +64,18 @@
       "position": "Implementation Specialist",
       "startDate": "2016-10",
       "endDate": "2018-03",
-      "highlights": []
+      "highlights": [
+        "Implemented and configured core banking software modules for bank clients: requirements analysis, SQL data setup, integration testing, and user acceptance support"
+      ]
     },
     {
       "name": "Samsung Electronics",
       "position": "Development Assistant",
       "startDate": "2016-03",
       "endDate": "2016-10",
-      "highlights": []
+      "highlights": [
+        "Supported the development team with testing, data preparation, and documentation of internal tools"
+      ]
     }
   ],
   "education": [
@@ -82,20 +91,52 @@
   ],
   "skills": [
     {
-      "name": "AI Tooling",
+      "name": "Architecture & System Design",
       "level": "",
       "keywords": [
+        "System Design",
+        "Microservices",
+        "Event-Driven Architecture",
+        "Domain-Driven Design (DDD)",
+        "Clean / Hexagonal Architecture",
+        "SOLID",
+        "GoF Design Patterns",
+        "CQRS",
+        "Saga",
+        "Transactional Outbox",
+        "Idempotency",
+        "Circuit Breaker / Resilience4j",
+        "Rate Limiting",
+        "Caching",
+        "Distributed Transactions",
+        "API Design (REST, OpenAPI, gRPC)",
+        "Strangler Fig / Legacy Decommissioning",
+        "High-Load & Fault Tolerance",
+        "ADR / Technical Design Docs"
+      ]
+    },
+    {
+      "name": "AI Engineering & Agents",
+      "level": "",
+      "keywords": [
+        "AI Agents / Agentic Workflows",
+        "LLM-powered Bots",
+        "Model Context Protocol (MCP)",
+        "Custom MCP Servers",
         "Claude Code",
         "OpenCode",
+        "Custom Skills / Plugins",
+        "Prompt Engineering",
+        "Tool / Function Calling",
+        "RAG",
+        "LLM Evaluation",
         "Claude",
+        "OpenAI",
+        "Gemini",
         "GLM",
         "DeepSeek",
         "Qwen",
-        "Gemini",
-        "Agent Development",
-        "Custom Skills/Tooling",
-        "Prompt Engineering",
-        "OpenAI"
+        "Self-hosted Open-source Models"
       ]
     },
     {
@@ -105,27 +146,32 @@
         "Kotlin",
         "Java",
         "Python",
-        "Quarkus",
         "Spring Boot",
+        "Spring Cloud",
+        "Spring Security",
+        "Quarkus",
         "Gradle",
         "Maven",
         "Hibernate",
         "JPA",
         "JDBC",
         "WebFlux",
+        "Coroutines",
         "JUnit",
         "Mockito",
+        "Mockk",
         "Testcontainers",
+        "WireMock",
         "REST",
         "gRPC",
         "R2DBC",
         "SQL",
         "jOOQ",
         "MapStruct",
-        "Coroutines",
         "Liquibase",
         "Flyway",
-        "Swagger/OpenAPI"
+        "Swagger/OpenAPI",
+        "GraalVM"
       ]
     },
     {
@@ -134,22 +180,24 @@
       "keywords": [
         "Docker",
         "Kubernetes",
+        "Helm",
         "Kafka",
-        "Redis",
+        "Apache Avro",
+        "Schema Registry",
         "RabbitMQ",
         "ArtemisMQ",
         "IBM MQ",
         "PostgreSQL",
-        "Gitlab",
-        "Github",
-        "Apache Avro",
-        "Artifactory",
+        "Redis",
+        "Keycloak",
+        "OAuth2 / OIDC",
+        "Nginx",
+        "Azure",
+        "Gitlab CI",
+        "GitHub Actions",
         "Jenkins",
         "Ansible",
-        "Helm",
-        "Azure",
-        "Nginx",
-        "Keycloak"
+        "Artifactory"
       ]
     },
     {
@@ -159,23 +207,32 @@
         "Prometheus",
         "Grafana",
         "Kibana",
-        "Micrometer"
+        "Micrometer",
+        "SLI / SLO",
+        "Alerting"
       ]
     },
     {
-      "name": "Code Quality",
+      "name": "Code Quality & Testing",
       "level": "",
       "keywords": [
         "SonarQube",
-        "Cobertura"
+        "Cobertura",
+        "Selenium",
+        "Appium",
+        "JMeter",
+        "Contract Testing",
+        "Code Review"
       ]
     },
     {
-      "name": "Tooling",
+      "name": "Tooling & Process",
       "level": "",
       "keywords": [
         "Postman",
-        "Jira"
+        "Jira",
+        "Agile / Scrum",
+        "Mentoring"
       ]
     }
   ],
@@ -189,6 +246,25 @@
       "fluency": "Fluent"
     }
   ],
-  "projects": [],
+  "projects": [
+    {
+      "name": "Resume-as-Code pipeline (my-cv)",
+      "description": "Open-source monorepo that generates a website, PDF, DOCX, Markdown, and LinkedIn text from a single JSON Resume source; built and maintained with AI agents (Claude Code) end-to-end.",
+      "highlights": [
+        "TypeScript npm-workspaces monorepo: shared validation layer (ajv + generated types), React/Vite site, Playwright PDF renderer, DOCX/MD/TXT renderers",
+        "External brand package with schema-validated design tokens and transformers (CSS, DOCX styles) shared across projects",
+        "GitHub Actions CI builds every artifact on each push; GitHub Pages deployment"
+      ],
+      "keywords": [
+        "TypeScript",
+        "React",
+        "Vite",
+        "Playwright",
+        "GitHub Actions",
+        "Claude Code"
+      ],
+      "url": "https://github.com/Nomadigit/my-cv"
+    }
+  ],
   "awards": []
 }
