@@ -61,6 +61,13 @@ function main() {
       children: [new TextRun({ text, color: styles.body.color, font: styles.body.font, size: styles.body.size })],
     });
 
+  // Links (project URLs) go in the mono font, like the contacts.
+  const link = (text: string) =>
+    new Paragraph({
+      spacing: { after: 60 },
+      children: [new TextRun({ text, color: styles.body.color, font: monoFont, size: small.size })],
+    });
+
   const bullet = (text: string) =>
     new Paragraph({
       bullet: { level: 0 },
@@ -137,6 +144,7 @@ function main() {
     children.push(heading("Projects"));
     for (const project of projects) {
       children.push(subheading(project.name ?? ""));
+      if (project.url) children.push(link(project.url));
       if (project.description) children.push(body(project.description));
       for (const highlight of project.highlights ?? []) {
         children.push(bullet(highlight));

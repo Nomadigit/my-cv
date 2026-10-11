@@ -13,6 +13,11 @@ export function Projects({ projects }: ProjectsProps) {
         <div className="entry" key={project.name}>
           <div className="entry-header">
             <span className="entry-title">{project.name}</span>
+            {project.url && (
+              <a className="entry-link" href={project.url} target="_blank" rel="noreferrer">
+                {project.url.replace(/^https?:\/\//, "")}
+              </a>
+            )}
           </div>
           {project.description && <p>{project.description}</p>}
           {project.highlights && project.highlights.length > 0 && (

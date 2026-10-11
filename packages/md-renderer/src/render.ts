@@ -61,7 +61,7 @@ function renderMarkdown(): string {
   if (projects.length > 0) {
     lines.push(`\n## Projects`);
     for (const project of projects) {
-      lines.push(`\n### ${project.name}`);
+      lines.push(`\n### ${project.url ? `[${project.name}](${project.url})` : project.name}`);
       if (project.description) lines.push(project.description);
       for (const highlight of project.highlights ?? []) {
         lines.push(`- ${highlight}`);
